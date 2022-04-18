@@ -1,0 +1,1002 @@
+@import "_font.scss";
+@import "_normalize.scss";
+@import "_values.scss";
+@import "_mixins.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 1146px;
+  margin: 0 auto;
+}
+
+.btn {
+  @include btn(1px solid #6852ed, 40px, transparent, 400);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.badge {
+  font-family: "Poppins", sans-serif;
+  @include text(10px, 700, normal, $badgeTextColor);
+  letter-spacing: 0.2px;
+  background-color: $badgeBgColor;
+  border-radius: 13px;
+  padding: 6px 11px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 61px;
+  right: 60px;
+}
+
+.moderniz-icon {
+  color: $iconColor;
+  position: absolute;
+  right: 40px;
+  top: 73px;
+  font-size: 20px;
+}
+
+.top-header {
+  min-height: 52px;
+  padding: 24px 0px 17px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Nunito", sans-serif;
+
+  &__text {
+    @include text(16px, 400, normal, $paragraph);
+  }
+
+  &__tel {
+    @include a(none, 16px, 400, normal, $paragraph);
+
+    &:hover {
+      color: $textColor;
+    }
+
+    &:before {
+      content: "\f095";
+      font: {
+        family: "fontAwesome";
+        size: 13px;
+      }
+      padding-right: 8px;
+    }
+  }
+}
+
+.devider {
+  color: $paragraph;
+  opacity: 0.3;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0px 195px;
+  font-family: "Nunito", sans-serif;
+
+  &__navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+    position: relative;
+  }
+
+  &__item {
+    list-style: none;
+    padding-right: 30px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+
+    &:nth-child(5):hover .header__submenu {
+      display: block;
+    }
+
+    &:nth-child(5) {
+      padding-right: 0;
+    }
+    &:nth-child(6) {
+      padding-left: 30px;
+    }
+  }
+
+  &__item:nth-child(1) {
+    padding-left: 30px;
+  }
+
+  &__item_selected {
+    color: $navColorSelected;
+    font-weight: 700;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $navColor;
+
+    &:hover {
+      color: $linkHoverColor;
+    }
+  }
+
+  &__btn-light {
+    color: $btnLight;
+  }
+
+  &__text {
+    margin: 0 8px;
+    color: $paragraph;
+    font-size: 16px;
+  }
+
+  &__submenu {
+    position: absolute;
+    min-height: 192px;
+    width: 203px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0 $boxColor;
+    right: -32px;
+    top: 53px;
+    display: none;
+  }
+
+  &__submenu-item {
+    padding-top: 10px;
+    padding-left: 30px;
+    list-style: none;
+
+    &:nth-child(1) {
+      padding-top: 30px;
+    }
+    &:nth-child(5) {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__submenu-link {
+    text-decoration: none;
+    color: $navColor;
+
+    &:hover {
+      color: $linkHoverColor;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  &__content {
+    width: 340px;
+    padding-top: 103px;
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    @include h($h1size, 700, normal, $hColor);
+    margin: 0;
+    padding-bottom: 32px;
+  }
+
+  &__text {
+    font-family: "Nunito", sans-serif;
+    @include text(18px, 400, normal, $paragraph);
+    padding-bottom: 40px;
+    line-height: 28px;
+  }
+
+  &__btn-dark {
+    font-family: "Poppins", sans-serif;
+    background: $btnDark;
+    @include text(16px, 400, normal, $btnColor);
+    padding: 13px 30px;
+    margin-right: 30px;
+  }
+
+  &__link {
+    font-family: "Poppins", sans-serif;
+    @include a(none, 16px, 400, normal, $aColor);
+
+    &:after {
+      content: "\f178";
+      font: {
+        size: 14px;
+        family: "fontAwesome";
+      }
+      padding-left: 11px;
+    }
+  }
+  &__bottom {
+    font-size: 40px;
+    color: $ArrowBottomColor;
+    background-color: $mainBottomBg;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    bottom: 48px;
+    left: 42%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+.services {
+  padding: 93px 0px 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__block {
+    position: relative;
+    @include card(360px, 207px, #fff, 10px, 0 0 20px 0 $shadowColor);
+    margin-right: 30px;
+    padding: 30px 0px 0px 30px;
+    overflow: hidden;
+
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+
+    i {
+      color: $iconColor;
+      font-size: 32px;
+    }
+
+    &:hover {
+      background: $servicesHover;
+      box-shadow: 0px 0px 20px $shadowCardColor;
+    }
+    &:hover i {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    @include h(22px, 700, normal, $hColor);
+    padding-top: 30px;
+    padding-bottom: 19px;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  &__text {
+    font-family: "Nunito", sans-serif;
+    @include text(14px, 400, normal, $paragraph);
+    transition: transform 0.4s ease-in-out;
+    width: 280px;
+  }
+
+  &__block:hover &__title {
+    color: $servicesColorHover;
+    transform: translateY(-30px);
+  }
+  &__block:hover &__text {
+    color: $servicesColorHover;
+    transform: translateY(-30px);
+  }
+
+  &__link {
+    @include a(none, 16px, 400, normal, $servicesColorHover);
+    position: absolute;
+    transition: transform 0.4s ease-in-out;
+    bottom: -16px;
+    &:after {
+      content: "\f178";
+      font: {
+        family: "fontAwesome";
+        size: 14px;
+      }
+      padding-left: 15px;
+    }
+  }
+
+  &__block:hover &__link {
+    transform: translateY(-65px);
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  height: 642px;
+
+  &__img {
+    position: absolute;
+    left: -90px;
+  }
+
+  &__content {
+    width: 510px;
+    height: 339px;
+    top: 126px;
+    position: absolute;
+    right: 0;
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    @include h(30px, 700, normal, $hColor);
+    padding-bottom: 31px;
+    width: 380px;
+    line-height: 42px;
+  }
+
+  &__text {
+    font-family: "Nunito", sans-serif;
+    @include text(18px, 400, normal, $paragraph);
+    line-height: 28px;
+    padding-bottom: 44px;
+  }
+
+  &__link {
+    font-family: "Poppins", sans-serif;
+    @include a(none, 16px, 400, normal, $aColor);
+
+    &:after {
+      content: "\f178";
+      font: {
+        family: "FontAwesome";
+        size: 14px;
+      }
+      padding-left: 15px;
+    }
+  }
+}
+
+.videos {
+  position: relative;
+  margin-top: 121px;
+  background-color: $videosBg;
+  height: 480px;
+  margin-bottom: 116px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__circle1 {
+    @include circle(181px, 181px, $circle1, 50%, none);
+    position: absolute;
+    top: 75px;
+    left: 35px;
+  }
+
+  &__circle2 {
+    @include circle(50px, 50px, $circle2, 50%, none);
+    position: absolute;
+    top: 50px;
+    left: 380px;
+    opacity: 0.5;
+  }
+
+  &__circle3 {
+    @include circle(20px, 20px, $circle3, 50%, none);
+    position: absolute;
+    left: 320px;
+    top: 300px;
+  }
+
+  &__circle4 {
+    @include circle(180px, 400px, $circle4, 150px, none);
+    position: absolute;
+    bottom: -160px;
+    left: 320px;
+    transform: rotate(-50deg);
+  }
+
+  &__content {
+    height: 117px;
+    width: 411px;
+    margin-top: 90px;
+  }
+
+  &__title {
+    font-family: "Nunito", sans-serif;
+    @include h(28px, 700, normal, #554d89);
+    text-align: center;
+    padding-bottom: 19px;
+    padding-top: 20px;
+  }
+
+  &__text {
+    font-family: "Poppins", sans-serif;
+    @include text(18px, 400, normal, #5b5766);
+    text-align: center;
+    line-height: 28px;
+  }
+
+  &__circle5 {
+    @include circle(37px, 37px, $circle5, 50%, none);
+    position: absolute;
+    top: 50px;
+    right: 480px;
+  }
+
+  &__circle6 {
+    @include circle(80px, 80px, $circle6, 50%, none);
+    position: absolute;
+    bottom: 70px;
+    right: 290px;
+  }
+
+  &__circle7 {
+    @include circle(200px, 200px, $circle7, 50%, none);
+    position: absolute;
+    right: -107px;
+    top: 50% - calc(width / 2);
+  }
+
+  &__circle8 {
+    @include circle(150px, 400px, $circle8, 150px, none);
+    position: absolute;
+    right: -218px;
+    top: -180px;
+    transform: rotate(-50deg);
+  }
+  &__btn {
+    @include circle(80px, 80px, none, 50%, none);
+    background: $videosBtn;
+    position: absolute;
+    top: 140px;
+    left: 718px;
+    cursor: pointer;
+
+    &:before {
+      content: "\f04b";
+      font: {
+        family: "FontAwesome";
+        size: 24px;
+      }
+      color: #fff;
+      margin-left: 4px;
+    }
+  }
+}
+
+.digital {
+  height: 742px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  &__content {
+    width: 510px;
+    position: absolute;
+    top: 205px;
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    @include h(28px, 700, normal, $hColor);
+    width: 440px;
+    line-height: 32px;
+    padding-bottom: 30px;
+  }
+
+  &__text {
+    font-family: "Nunito", sans-serif;
+    @include text(16px, 400, normal, $paragraph);
+    line-height: 28px;
+    padding-bottom: 41px;
+    width: 460px;
+  }
+
+  &__link {
+    font-family: "Poppins", sans-serif;
+    @include a(none, 16px, 400, normal, $aColor);
+
+    &:after {
+      content: "\f178";
+      font: {
+        family: "FontAwesome";
+        size: 14px;
+      }
+      padding-left: 15px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.solutions {
+  min-height: 518px;
+  position: relative;
+  padding-top: 80px;
+  display: flex;
+  justify-content: space-between;
+
+  &__content {
+    width: 330px;
+    height: 303px;
+    margin-top: 100px;
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    @include h(34px, 700, normal, $hColor);
+    width: 300px;
+    padding-bottom: 30px;
+  }
+
+  &__text {
+    font-family: "Nunito", sans-serif;
+    @include text(16px, 400, normal, $paragraph);
+    line-height: 25px;
+    padding-bottom: 38px;
+  }
+}
+
+.services__block_position1 {
+  margin-bottom: 30px;
+}
+
+.services__block_position2 {
+  position: absolute;
+  left: 393px;
+  top: 108px;
+}
+
+.services__block_position3 {
+  position: absolute;
+}
+
+.services__block_position4 {
+  position: absolute;
+  left: 395px;
+  bottom: -35px;
+}
+
+.skills {
+  height: 563px;
+  padding-top: 152px;
+  padding-bottom: 140px;
+  display: flex;
+  justify-content: space-between;
+
+  &__content {
+    width: 554px;
+    height: 271px;
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    @include h(34px, 700, normal, $hColor);
+    padding-bottom: 32px;
+  }
+
+  &__text {
+    font-family: "Nunito", sans-serif;
+    @include h(16px, 400, normal, $paragraph);
+    padding-bottom: 54px;
+    line-height: 25px;
+  }
+
+  &__static {
+    width: 555px;
+  }
+
+  &__date {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+
+  &__name {
+    font: {
+      family: "Nunito", sans-serif;
+      size: 16px;
+      weight: 400;
+      style: normal;
+    }
+    color: $paragraph;
+  }
+
+  &__percent {
+    font: {
+      family: "Nunito", sans-serif;
+      size: 16px;
+      weight: 400;
+      style: normal;
+    }
+    color: $paragraph;
+  }
+
+  &__progress {
+    @include progressLine($progressColor, 5px, 2.5px);
+    width: 555px;
+    margin-bottom: 29px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__progress-line {
+    @include progressLine($progressLineColor, 5px, 2.5px);
+
+    &_width1 {
+      width: 533px;
+    }
+
+    &_width2 {
+      width: 450px;
+    }
+
+    &_width3 {
+      width: 500px;
+    }
+
+    &_width4 {
+      width: 483px;
+    }
+  }
+}
+
+.contact {
+  height: 170px;
+  background: $contactBg;
+  position: relative;
+  overflow: hidden;
+
+  &__text {
+    font-family: "Poppins", sans-serif;
+    @include text(16px, 600, normal, $contactText);
+    position: absolute;
+    top: 46%;
+    left: 20%;
+  }
+
+  &__btn_position {
+    position: absolute;
+    top: 41%;
+    right: 25%;
+    padding: 10px 30px;
+  }
+
+  &__circle {
+    @include circle(180px, 400px, $circle4, 150px, none);
+    position: absolute;
+    left: -150px;
+    top: 202px;
+    transform: rotate(-50deg);
+  }
+
+  &__circle1 {
+    @include circle(50px, 50px, $circle1, 50%, none);
+    position: absolute;
+    right: 210px;
+    top: 20px;
+  }
+
+  &__circle3 {
+    @include circle(111px, 111px, $circle3, 50%, none);
+    position: absolute;
+    bottom: -40px;
+    right: 70px;
+  }
+}
+
+.card {
+  padding-top: 140px;
+  padding-bottom: 140px;
+  height: 896px;
+  display: flex;
+  justify-content: space-between;
+
+  &__section {
+    @include card(360px, 587px, #fff, 10px, 0 0 20px $shadowColor);
+    padding: 60px 0 60px 60px;
+    position: relative;
+  }
+
+  &__name {
+    font-family: "Poppins", sans-serif;
+    @include h(20px, 700, normal, $hColor);
+  }
+
+  &__hr {
+    width: 40px;
+    height: 2px;
+    background-color: $hrColor;
+    border-radius: 2px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    font-family: "Poppins", sans-serif;
+    @include h(50px, 700, normal, $hColor);
+  }
+
+  &__month {
+    font-family: "Nunito", sans-serif;
+    @include text(16px, 400, normal, $paragraph);
+    padding: 10px 0 60px;
+  }
+
+  &__content {
+    padding-bottom: 60px;
+  }
+
+  &__text-check {
+    font-family: "Nunito", sans-serif;
+    @include text(16px, 400, normal, $paragraph);
+    padding-bottom: 10px;
+
+    &::before {
+      content: "\f00c";
+      font: {
+        family: "fontAwesome";
+        size: 18px;
+      }
+      color: $checkColor;
+      padding-right: 10px;
+    }
+  }
+
+  &__text-times {
+    font-family: "Nunito", sans-serif;
+    @include text(16px, 400, normal, $paragraph);
+    padding-bottom: 10px;
+
+    &:last-child() {
+      padding-bottom: 0px;
+    }
+
+    &::before {
+      content: "\f00d";
+      font: {
+        family: "fontAwesome";
+        size: 18px;
+      }
+      color: $timesColor;
+      padding-right: 15px;
+    }
+  }
+}
+
+.support {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 120px;
+
+  &__block {
+    width: 675px;
+    padding-right: 30px;
+    position: relative;
+    padding-left: 70px;
+  }
+
+  &__moder-block {
+    padding-right: 0px;
+  }
+
+  &__icon {
+    position: absolute;
+    color: $iconColor;
+    left: 30px;
+    font-size: 32px;
+    left: 0px;
+    top: -4px;
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    @include h(20px, 600, normal, $hColor);
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-family: "Nunito", sans-serif;
+    @include text(16px, 400, normal, $paragraph);
+    padding-bottom: 28px;
+    line-height: 25px;
+  }
+
+  &__moder-link {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+  }
+}
+
+.footer {
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+
+  &__circle {
+    @include circle(1000px, 485px, $circleBg, 242.5px, none);
+    position: absolute;
+    transform: rotate(45deg);
+    left: -110px;
+    top: -50px;
+  }
+
+  &__contacts {
+    width: 380px;
+    position: absolute;
+    top: 148px;
+    left: 190px;
+  }
+
+  &__contacts-title {
+    font-family: "Poppins", sans-serif;
+    @include h(20px, 500, normal, #fff);
+    padding-bottom: 30px;
+  }
+
+  &__contacts-question {
+    font-family: "Nunito", sans-serif;
+    @include text(16px, 400, normal, #fff);
+    padding-bottom: 3px;
+  }
+
+  &__contacts-number {
+    font-family: "Poppins", sans-serif;
+    @include a(none, 22px, 700, normal, #fff);
+  }
+
+  &__contacts-content {
+    padding-left: 60px;
+    margin-bottom: 36px;
+    &::before {
+      content: "\f590";
+      font: {
+        family: "fontAwesome";
+        size: 40px;
+      }
+      position: absolute;
+      color: #fff;
+      left: 0px;
+    }
+  }
+
+  &__contacts-address {
+    font-family: "Nunito", sans-serif;
+    @include text(16px, 400, normal, #fff);
+    width: 320px;
+    line-height: 25px;
+    padding-bottom: 10px;
+  }
+
+  &__contacts-email {
+    font-family: "Nunito", sans-serif;
+    @include text(16px, 400, normal, #fff);
+  }
+
+  &__links {
+    width: 299px;
+    position: absolute;
+    left: 43%;
+    top: 147px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__links-block1 {
+    position: absolute;
+    left: 190px;
+    bottom: 30px;
+  }
+
+  &__links-title {
+    font-family: "Poppins", sans-serif;
+    @include h(20px, 600, normal, $hColor);
+    padding-bottom: 30px;
+  }
+
+  &__links-text {
+    font-family: "Poppins", sans-serif;
+    @include a(none, 16px, 400, normal, $aColor);
+    display: block;
+    padding-top: 10px;
+
+    &:hover {
+      color: $linkHoverColor;
+    }
+  }
+
+  &__subscribe {
+    width: 299px;
+    height: 150px;
+    position: absolute;
+    right: 180px;
+    top: 144px;
+  }
+
+  &__subscribe-title {
+    font-family: "Poppins", sans-serif;
+    @include h(20px, 600, normal, $hColor);
+    padding-bottom: 35px;
+  }
+
+  &__subscribe-form {
+    height: 50px;
+    width: 280px;
+    border-radius: 25px;
+    border: 2px solid#6852ed;
+    margin-bottom: 30px;
+  }
+
+  &__subscribe-text {
+    font-family: "Nunito", sans-serif;
+    @include text(16px, 400, normal, $paragraph);
+    width: 253px;
+    letter-spacing: 0.2px;
+    line-height: 23px;
+  }
+
+  &__input-text {
+    position: absolute;
+    font-family: "Nunito", sans-serif;
+    @include text(16px, 400, normal, $paragraph);
+    top: 73px;
+    padding-left: 24px;
+  }
+
+  &__circle2 {
+    @include circle(101px, 101px, $circleBg, 50%, none);
+    position: absolute;
+    right: 40px;
+    top: 40px;
+  }
+
+  &__circle3 {
+    @include circle(60px, 60px, $circle3, 50%, none);
+    position: absolute;
+    right: 110px;
+    bottom: 96px;
+  }
+
+  &__circle4 {
+    @include circle(20px, 20px, $circleBg, 50%, none);
+    position: absolute;
+    right: 200px;
+    bottom: 75px;
+  }
+
+  &__circle5 {
+    @include circle(148px, 148px, $circleBg, 50%, none);
+    position: absolute;
+    left: 50%;
+    bottom: -110px;
+  }
+
+  &__other-content {
+    width: 378px;
+    position: absolute;
+    bottom: 110px;
+    left: 43%;
+  }
+
+  &__hr {
+    height: 4px;
+    width: 99px;
+    background-color: #e1dcff;
+    margin-bottom: 13px;
+  }
+
+  &__other-text {
+    font-family: "Nunito", sans-serif;
+    @include text(16px, 400, normal, $paragraph);
+  }
+}

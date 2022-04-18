@@ -1,0 +1,50 @@
+@mixin btn($border, $radius, $bgColor, $weight) {
+  border: $border;
+  border-radius: $radius;
+  background-color: $bgColor;
+  font-weight: $weight;
+}
+
+@mixin h($font_size, $font-weight, $font_style, $color) {
+  font-size: $font_size;
+  font-weight: $font_weight;
+  font-style: $font_style;
+  color: $color;
+}
+
+@mixin text($font_size, $font_weight, $font_style, $color) {
+  font-size: $font_size;
+  font-weight: $font_weight;
+  font-style: $font_style;
+  color: $color;
+}
+
+@mixin a($decoration, $font_size, $font_weight, $font_style, $color) {
+  text-decoration: $decoration;
+  font-size: $font_size;
+  font-weight: $font_weight;
+  font-style: $font_style;
+  color: $color;
+}
+
+@mixin circle($height, $width, $bgColor, $radius, $border) {
+  height: $height;
+  width: $width;
+  background-color: $bgColor;
+  border-radius: $radius;
+  border: $border;
+}
+
+@mixin progressLine($background, $height, $radius) {
+  background: $background;
+  height: $height;
+  border-radius: $radius;
+}
+
+@mixin card($width, $height, $bgColor, $radius, $shadow) {
+  width: $width;
+  height: $height;
+  background-color: $bgColor;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
